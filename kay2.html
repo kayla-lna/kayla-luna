@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let barang=[
+            {nama:"lip mate", harga:45000},
+            {nama:"lip oil", harga:50000},
+            {nama:"mascara", harga:85000},
+            {nama:"blush on", harga:69000},
+            {nama:"serum bulu mata", harga:49000},
+            {nama:"eye shadow", harga:95000},
+            {nama:"hand body", harga:37000},
+            {nama:"hair tonic", harga:60000},
+            {nama:"sunscreen", harga:35000},
+        ];
+        let barangs=barang.map ((item)=>{
+           return `<h1>${item.nama}</h1><p>aku mau belii</p><h3>${item.harga}</h3>`
+        });
+             document.write(barangs)
+    </script>
+</body>
+</html>
