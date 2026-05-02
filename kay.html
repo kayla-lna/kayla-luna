@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <p id="paragraf">halo semuanya nama aku kayla^^</p>
+    <button onclick="coba()">klik</button>
+    <button onclick="coba2()">klik</button>
+    <p onmouseenter="coba2()"onmouseleave="coba()"></p>
+<script>
+    body=document.getElementById("body");
+    paragraf=document.getElementById("paragraf");
+   coba=()=>{
+        body.style.backgroundColor="lightblue";
+        paragraf.style.fontSize="50px";
+        paragraf.style.color="white";
+    };
+    coba2=()=>{
+        body.style.backgroundColor="pink";
+        paragraf.style.fontSize="5px";
+        paragraf.style.color="white";
+    };
+
+</script>
+</body>
+</html>
