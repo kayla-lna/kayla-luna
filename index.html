@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <h2>Sisa Saldo: Rp. <span id="saldo">500,000</span></h2>
+    <div id="containerBarang"></div> 
+
+<style>
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .box {
+        display: inline-block;
+        box-shadow: 0 0 2px 2px rgba(218, 132, 200, 0.7);
+        border-radius: 15px;
+        margin-left: 47px;
+        margin-top: 20px;
+        background-color: white;
+    }
+
+    .box img {
+        border-radius: 15px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-grad {
+  background-image: linear-gradient(to right, #DAE2F8 0%, #D6A4A4 51%, #DAE2F8 100%);
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  outline: none;
+  border: none;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+    background-color: lavenderblush;
+}
+
+    </style>
+       <script> 
+       
+       let saldo = 500000;
+
+    const products = [
+        {
+            img: "classic burger bun.jpg",
+            name: "burger",
+            desc: "classic burger bun",
+            price: 20000,
+        },
+
+          {
+            img: "pizza tuna.jpg",
+            name: "pizza",
+            desc: "pizza tuna",
+            price: 175000,
+        },
+
+          {
+            img: "blueberry cheesecake.jpg",
+            name: "cheese cake",
+            desc: "bluberry cheese cake",
+            price: 45000,
+        },
+
+          {
+            img: "donut.jpg",
+            name: "donut",
+            desc: "classic donut",
+            price: 16000,
+        },
+
+         {
+            img: "honey-glazed chicken wings.jpg",
+            name: "chicken wings",
+            desc: "ayam dengan manisnya madu",
+            price: 86000,
+        },
+
+         {
+            img: "japanese strawberry shortcake -.jpg",
+            name: "strawberry cake",
+            desc: "cake strawberry",
+            price: 25000,
+        },
+
+         {
+            img: "mochi strawberry.jpg",
+            name: "mochi daifuku",
+            desc: "mochi kenyal dan segar",
+            price: 10000,
+        },
+
+         {                           
+            img: "matcha latte.jpg",
+            name: "matcha latte",
+            desc: "matcha latte",
+            price: 32000,
+        },
+    ];
+
+    function beli (harga) {
+        if ((saldo) => harga) {
+            saldo -= harga;
+            document.getElementById("saldo").innerHTML = saldo.toLocaleString();
+
+            alert("transaksi berhasil");
+        } else {
+            alert("maaf, saldo anda tidak mencukupi");
+        } 
+      }
+
+
+   let produk = products.map((item) => {
+        return `
+        <div class = "box">
+        <img src="${item.img}">
+        <div class = "card-body">
+            <h1>${item.name}</h1>
+            <p>${item.desc}</p>
+            <h2 style="color : pink;">Rp. ${item.price.toLocaleString("id-ID")}</h2>
+            <button class="btn-grad" onclick="beli(${item.price})">Beli</button>
+          </div>
+          </div>
+          `;
+    });
+    
+    document.write(produk.join(""));
+</script>
+
+</body>
+</html>
